@@ -1,3 +1,7 @@
+declare module "@zondax/filecoin-signing-tools/nodejs/filecoin_signer_wasm" {
+  export * from "@zondax/filecoin-signing-tools"
+}
+
 declare module "@zondax/filecoin-signing-tools" {
   export interface ExtendedKey {
     address: string;

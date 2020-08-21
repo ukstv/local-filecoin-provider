@@ -1,4 +1,4 @@
-import signingTools from "@zondax/filecoin-signing-tools";
+import signingTools from "@zondax/filecoin-signing-tools/nodejs/filecoin_signer_wasm";
 import type {
   ExtendedKey,
   MessageParams,
