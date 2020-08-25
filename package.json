@@ -20,5 +20,9 @@
   },
   "dependencies": {
     "@zondax/filecoin-signing-tools": "^0.6.3"
+  },
+  "engines": {
+    "node": ">=12",
+    "pnpm": ">=5.4"
   }
 }
