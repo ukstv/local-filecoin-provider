@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`secp256k1 #sign 1`] = `
+Object {
+  "message": Object {
+    "from": "t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka",
+    "gaslimit": 1000,
+    "gasprice": "1",
+    "method": 0,
+    "nonce": 0,
+    "params": "",
+    "to": "t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka",
+    "value": "0",
+  },
+  "signature": Object {
+    "data": "OAr5uVw17SXvH5sVlp+j4aRURHmLnCup/o51mz8QJDN8uDgRai8zetAVbdtknRoXnaW3CluGOcmLESSOaenc9AE=",
+    "type": 1,
+  },
+}
+`;
