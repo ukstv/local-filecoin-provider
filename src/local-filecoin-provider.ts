@@ -1,9 +1,13 @@
-import signingTools from "@zondax/filecoin-signing-tools/nodejs/filecoin_signer_wasm";
 import type {
   ExtendedKey,
   MessageParams,
   TransactionSignResponse,
 } from "@zondax/filecoin-signing-tools";
+
+const moduleToImport = process.env.JEST_WORKER_ID
+  ? "@zondax/filecoin-signing-tools/nodejs"
+  : "@zondax/filecoin-signing-tools";
+const signingTools = require(moduleToImport);
 
 export class LocalFilecoinProvider {
   readonly #privateKey: ExtendedKey;
