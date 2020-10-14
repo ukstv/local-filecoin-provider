@@ -1,7 +1,7 @@
 import type {
   ExtendedKey,
   MessageParams,
-  TransactionSignResponse,
+  TransactionSignLotusResponse,
 } from "@zondax/filecoin-signing-tools";
 
 const moduleToImport = process.env.JEST_WORKER_ID
@@ -29,11 +29,11 @@ export class LocalFilecoinProvider {
   async sign(
     from: string,
     message: MessageParams
-  ): Promise<TransactionSignResponse> {
+  ): Promise<TransactionSignLotusResponse> {
     if (from === this.#privateKey.address) {
-      return signingTools.transactionSign(
+      return signingTools.transactionSignLotus(
         message,
-        this.#privateKey.private_hexstring
+        this.#privateKey.private_base64
       );
     } else {
       throw new Error(`Can only sign with address ${this.#privateKey.address}`);

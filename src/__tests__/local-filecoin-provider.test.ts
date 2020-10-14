@@ -13,14 +13,16 @@ describe("secp256k1", () => {
     const accounts = await provider.getAccounts();
     const address = accounts[0];
     const sig = await provider.sign(address, {
-      from: address,
-      to: address,
-      value: "0",
-      method: 0,
-      gasPrice: "1",
-      gasLimit: 1000,
-      nonce: 0,
-      params: "",
+      From: address,
+      To: address,
+      Value: "0",
+      Method: 0,
+      GasPrice: "1",
+      GasFeeCap: "1",
+      GasPremium: "1",
+      GasLimit: 1000,
+      Nonce: 0,
+      Params: "",
     });
     expect(sig).toMatchSnapshot();
   });
