@@ -1,12 +1,13 @@
 {
   "name": "@ukstv/local-filecoin-provider",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Local Filecoin Provider uses passed private key to sign message",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    "build": "rm -rf lib/ && tsc --project ."
+    "build": "rm -rf lib/ && tsc --project .",
+    "prepack": "npm run build"
   },
   "author": "Sergey Ukustov <sergey@ukstv.me>",
   "license": "(MIT OR Apache-2.0)",
