@@ -1,3 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`secp256k1 #sign 1`] = `"{\\"Message\\":{\\"From\\":\\"t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka\\",\\"GasFeeCap\\":\\"1\\",\\"GasLimit\\":1000,\\"GasPremium\\":\\"1\\",\\"Method\\":0,\\"Nonce\\":0,\\"Params\\":\\"\\",\\"To\\":\\"t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka\\",\\"Value\\":\\"0\\"},\\"Signature\\":{\\"Data\\":\\"l3WF6gkTMr1ZD8YUT186/0I7Z+ftoUWs7/2J/vt86qMD5u582Oh+gEcBUq+OaZCNfYdsvq/MTJn8aU07PquT/wE=\\",\\"Type\\":1}}"`;
+exports[`secp256k1 #sign 1`] = `
+Object {
+  "Message": Object {
+    "From": "t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka",
+    "GasFeeCap": "1",
+    "GasLimit": 1000,
+    "GasPremium": "1",
+    "Method": 0,
+    "Nonce": 0,
+    "Params": "",
+    "To": "t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka",
+    "Value": "0",
+  },
+  "Signature": Object {
+    "Data": "l3WF6gkTMr1ZD8YUT186/0I7Z+ftoUWs7/2J/vt86qMD5u582Oh+gEcBUq+OaZCNfYdsvq/MTJn8aU07PquT/wE=",
+    "Type": 1,
+  },
+}
+`;

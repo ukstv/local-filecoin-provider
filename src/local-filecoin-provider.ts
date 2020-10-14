@@ -31,10 +31,11 @@ export class LocalFilecoinProvider {
     message: MessageParams
   ): Promise<TransactionSignLotusResponse> {
     if (from === this.#privateKey.address) {
-      return signingTools.transactionSignLotus(
+      const asString = await signingTools.transactionSignLotus(
         message,
         this.#privateKey.private_base64
       );
+      return JSON.parse(asString);
     } else {
       throw new Error(`Can only sign with address ${this.#privateKey.address}`);
     }
