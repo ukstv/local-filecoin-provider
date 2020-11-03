@@ -15,7 +15,14 @@ export class LocalFilecoinProvider {
   constructor(privateKey: string, testnet = true) {
     const buf = Buffer.from(privateKey, "hex");
     const json = JSON.parse(buf.toString());
-    this.#privateKey = signingTools.keyRecover(json.PrivateKey, testnet);
+    const keyType = json.Type;
+    if (keyType === "bls") {
+      this.#privateKey = signingTools.keyRecoverBLS(json.PrivateKey, testnet);
+    } else if (keyType === "secp256k1") {
+      this.#privateKey = signingTools.keyRecover(json.PrivateKey, testnet);
+    } else {
+      throw new Error(`Unknown key type: ${keyType}`);
+    }
   }
 
   async getAccounts(): Promise<string[]> {

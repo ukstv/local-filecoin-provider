@@ -38,6 +38,10 @@ declare module "@zondax/filecoin-signing-tools" {
     privateKey: string,
     testnet?: boolean
   ): ExtendedKey;
+  export function keyRecoverBLS(
+      privateKey: string,
+      testnet?: boolean
+  ): ExtendedKey;
   export function transactionSignLotus(
     message: MessageParams,
     privateKey: string
