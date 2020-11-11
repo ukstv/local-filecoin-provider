@@ -14,16 +14,16 @@ declare module "@zondax/filecoin-signing-tools" {
   }
 
   export interface MessageParams {
-From: string;
-To: string;
-Value: string;
-GasPrice: string;
-GasLimit: number;
-GasFeeCap: string;
-GasPremium: string;
-Nonce: number;
-Method: number;
-Params: string;
+    From: string;
+    To: string;
+    Value: string;
+    GasPrice: string;
+    GasLimit: number;
+    GasFeeCap: string;
+    GasPremium: string;
+    Nonce: number;
+    Method: number;
+    Params: string;
   }
 
   export interface TransactionSignLotusResponse {
@@ -39,8 +39,8 @@ Params: string;
     testnet?: boolean
   ): ExtendedKey;
   export function keyRecoverBLS(
-      privateKey: string,
-      testnet?: boolean
+    privateKey: string,
+    testnet?: boolean
   ): ExtendedKey;
   export function transactionSignLotus(
     message: MessageParams,

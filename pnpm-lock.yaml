@@ -1,9 +1,9 @@
 dependencies:
   '@glif/filecoin-wallet-provider': 1.0.0-beta.5_jest@26.5.3+typescript@4.0.3
   '@zondax/filecoin-signing-tools': 0.12.0
+  uint8arrays: 1.1.0
 devDependencies:
   '@types/jest': 26.0.14
-  '@types/node': 14.11.8
   jest: 26.5.3
   prettier: 2.1.2
   ts-jest: 26.4.1_jest@26.5.3+typescript@4.0.3
@@ -565,6 +565,10 @@ packages:
       node: '>= 10.14.2'
     resolution:
       integrity: sha512-QDs5d0gYiyetI8q+2xWdkixVQMklReZr4ltw7GFDtb4fuJIBCE6mzj2LnitGqCuAlLap6wPyb8fpoHgwZz5fdg==
+  /@multiformats/base-x/4.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-eMk0b9ReBbV23xXU693TAIrLyeO5iTgBZGSJfpqriG8UkYvr/hC9u9pyMlAakDNHWmbhMZCDs6KQO0jzKD8OTw==
   /@sinonjs/commons/1.8.1:
     dependencies:
       type-detect: 4.0.8
@@ -3041,6 +3045,16 @@ packages:
       npm: '>=6.0.0'
     resolution:
       integrity: sha512-KcCxpBVY8fdVKu4dJMAahq4F/2Z/9xqEjIiR7PiMe7LRGeorFn2NLmicN6nLBCqQvft6MG2Lc9X5P0IdyvnxEw==
+  /multibase/3.0.1:
+    dependencies:
+      '@multiformats/base-x': 4.0.1
+      web-encoding: 1.0.4
+    dev: false
+    engines:
+      node: '>=10.0.0'
+      npm: '>=6.0.0'
+    resolution:
+      integrity: sha512-MRU5WpnSg81/vYO977MweoeUAxBdXl7+F5Af2Es+X6Vcgfk/g/EjIqXTgm3kb+xO3m1Kzr+aIV14oRX7nv5Z9w==
   /multicodec/1.0.4:
     dependencies:
       buffer: 5.6.0
@@ -4169,6 +4183,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==
+  /uint8arrays/1.1.0:
+    dependencies:
+      multibase: 3.0.1
+      web-encoding: 1.0.4
+    dev: false
+    resolution:
+      integrity: sha512-cLdlZ6jnFczsKf5IH1gPHTtcHtPGho5r4CvctohmQjw8K7Q3gFdfIGHxSTdTaCKrL4w09SsPRJTqRS0drYeszA==
   /union-value/1.0.1:
     dependencies:
       arr-union: 3.1.0
@@ -4272,6 +4293,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
+  /web-encoding/1.0.4:
+    dev: false
+    resolution:
+      integrity: sha512-DcXs2lbVPzuJmn2kuDEwul2oZg7p4YMa5J2f0YzsOBHaAnBYGPNUB/rJ74DTjTKpw7F0+lSsVM8sFHE2UyBixg==
   /webidl-conversions/5.0.0:
     dev: true
     engines:
@@ -4420,9 +4445,9 @@ packages:
 specifiers:
   '@glif/filecoin-wallet-provider': ^1.0.0-beta.5
   '@types/jest': ^26.0.14
-  '@types/node': ^14.11.8
   '@zondax/filecoin-signing-tools': ^0.12.0
   jest: ^26.5.3
   prettier: ^2.1.2
   ts-jest: ^26.4.1
   typescript: ^4.0.3
+  uint8arrays: ^1.1.0

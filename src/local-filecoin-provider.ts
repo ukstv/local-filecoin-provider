@@ -4,6 +4,7 @@ import type {
   TransactionSignLotusResponse,
 } from "@zondax/filecoin-signing-tools";
 import type { WalletSubProvider } from "@glif/filecoin-wallet-provider";
+import * as bytes from "uint8arrays";
 
 const moduleToImport = process.env.JEST_WORKER_ID
   ? "@zondax/filecoin-signing-tools/nodejs"
@@ -14,8 +15,8 @@ export class LocalFilecoinProvider implements WalletSubProvider {
   readonly #privateKey: ExtendedKey;
 
   constructor(privateKey: string, testnet = true) {
-    const buf = Buffer.from(privateKey, "hex");
-    const json = JSON.parse(buf.toString());
+    const buf = bytes.fromString(privateKey, "base16");
+    const json = JSON.parse(bytes.toString(buf));
     const keyType = json.Type;
     if (keyType === "bls") {
       this.#privateKey = signingTools.keyRecoverBLS(json.PrivateKey, testnet);
