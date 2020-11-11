@@ -4,6 +4,7 @@ import type {
   TransactionSignLotusResponse,
 } from "@zondax/filecoin-signing-tools";
 import type { WalletSubProvider } from "@glif/filecoin-wallet-provider";
+import { Network } from "@glif/filecoin-wallet-provider";
 import * as bytes from "uint8arrays";
 
 const moduleToImport = process.env.JEST_WORKER_ID
@@ -14,14 +15,15 @@ const signingTools = require(moduleToImport);
 export class LocalFilecoinProvider implements WalletSubProvider {
   readonly #privateKey: ExtendedKey;
 
-  constructor(privateKey: string, testnet = true) {
+  constructor(privateKey: string, network: Network = Network.MAIN) {
     const buf = bytes.fromString(privateKey, "base16");
     const json = JSON.parse(bytes.toString(buf));
     const keyType = json.Type;
+    const isTestnet = network === Network.TEST;
     if (keyType === "bls") {
-      this.#privateKey = signingTools.keyRecoverBLS(json.PrivateKey, testnet);
+      this.#privateKey = signingTools.keyRecoverBLS(json.PrivateKey, isTestnet);
     } else if (keyType === "secp256k1") {
-      this.#privateKey = signingTools.keyRecover(json.PrivateKey, testnet);
+      this.#privateKey = signingTools.keyRecover(json.PrivateKey, isTestnet);
     } else {
       throw new Error(`Unknown key type: ${keyType}`);
     }

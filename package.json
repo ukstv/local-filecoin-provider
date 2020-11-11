@@ -1,6 +1,6 @@
 {
   "name": "@ukstv/local-filecoin-provider",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Local Filecoin Provider uses passed private key to sign message",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

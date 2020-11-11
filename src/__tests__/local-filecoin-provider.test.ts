@@ -1,4 +1,5 @@
-import { LocalFilecoinProvider } from "../local-filecoin-provider";
+import {LocalFilecoinProvider} from "../local-filecoin-provider";
+import {Network} from "@glif/filecoin-wallet-provider";
 
 const secp256k1Key =
   "7b2254797065223a22736563703235366b31222c22507269766174654b6579223a2257587362654d5176487a366f5668344b637262633045642b31362b3150766a6a504f3753514931355031343d227d";
@@ -7,7 +8,7 @@ const blsKey =
   "7b2254797065223a22626c73222c22507269766174654b6579223a226e586841424f4163796856504b48326155596261796f4475752f4c6f32515a2b6662622f6f736a2f34456f3d227d";
 
 describe("secp256k1", () => {
-  const provider = new LocalFilecoinProvider(secp256k1Key, true);
+  const provider = new LocalFilecoinProvider(secp256k1Key, Network.TEST);
   test("#getAccounts", async () => {
     const accounts = await provider.getAccounts();
     expect(accounts).toEqual(["t17lxg2i2otnl7mmpw2ocd6o4e3b4un3272vny6ka"]);
@@ -32,7 +33,7 @@ describe("secp256k1", () => {
 });
 
 describe("bls", () => {
-  const provider = new LocalFilecoinProvider(blsKey, true);
+  const provider = new LocalFilecoinProvider(blsKey, Network.TEST);
   test("#getAccounts", async () => {
     const accounts = await provider.getAccounts();
     expect(accounts).toEqual([
