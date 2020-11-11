@@ -3,13 +3,14 @@ import type {
   MessageParams,
   TransactionSignLotusResponse,
 } from "@zondax/filecoin-signing-tools";
+import type { WalletSubProvider } from "@glif/filecoin-wallet-provider";
 
 const moduleToImport = process.env.JEST_WORKER_ID
   ? "@zondax/filecoin-signing-tools/nodejs"
   : "@zondax/filecoin-signing-tools";
 const signingTools = require(moduleToImport);
 
-export class LocalFilecoinProvider {
+export class LocalFilecoinProvider implements WalletSubProvider {
   readonly #privateKey: ExtendedKey;
 
   constructor(privateKey: string, testnet = true) {
@@ -27,10 +28,6 @@ export class LocalFilecoinProvider {
 
   async getAccounts(): Promise<string[]> {
     return [this.#privateKey.address];
-  }
-
-  async newAccount(): Promise<void> {
-    throw new Error(`Not supported: LocalFilecoinProvider.newAccount`);
   }
 
   async sign(

@@ -14,16 +14,16 @@ declare module "@zondax/filecoin-signing-tools" {
   }
 
   export interface MessageParams {
-    From: string;
-    To: string;
-    Value: string;
-    GasPrice: string;
-    GasLimit: number;
-    GasFeeCap: string;
-    GasPremium: string;
-    Nonce: number;
-    Method: number;
-    Params: string;
+From: string;
+To: string;
+Value: string;
+GasPrice: string;
+GasLimit: number;
+GasFeeCap: string;
+GasPremium: string;
+Nonce: number;
+Method: number;
+Params: string;
   }
 
   export interface TransactionSignLotusResponse {
